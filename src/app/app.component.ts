@@ -7,9 +7,15 @@ import {GlobSerService} from './glob-ser.service';
 })
 export class AppComponent  {
   name = 'Angular';
-  
-  datadariglob="";
+  datahtml=""
+  datadariglob='';
   constructor(public variabelglobal : GlobSerService){
     this.datadariglob = this.variabelglobal.getData();
   }
+
+  ubahdata(){
+    this.variabelglobal.setData(this.datahtml);
+    this.datadariglob = this.variabelglobal.getData();
+  }
+  
 }
